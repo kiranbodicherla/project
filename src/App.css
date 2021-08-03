@@ -1,0 +1,29 @@
+.main{
+    display: grid;
+    grid-template-columns:200px 750px auto;
+  }
+  img{
+    height: 50px;
+    width: 50px;
+  }
+  .cards{
+    height: 1400px;
+    width: 1400px;
+    display: grid;
+    
+    grid-template-columns: repeat(3,330px);
+    
+    grid-template-rows: repeat(3,330px);
+  }
+  .card{
+    
+    
+    height: 200px;
+    width: 200px;
+    background-color:white;
+   
+  
+  }
+  ul{
+    list-style-type: none;
+  }
