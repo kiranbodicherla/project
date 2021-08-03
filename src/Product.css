@@ -1,0 +1,35 @@
+*{
+    display: flex;
+    text-align: center;
+}
+.main{
+    display: grid;
+    grid-template-columns:200px 750px auto;
+  }
+  img{
+    height: 50px;
+    width: 50px;
+  }
+  .cards{
+    height: 1400px;
+    width: 1400px;
+    display: grid;
+    
+    grid-template-columns: repeat(3,250px);
+    
+    grid-template-rows: repeat(3,250px);
+  }
+  .card{
+    
+    
+    height: 250px;
+    width: 250px;
+    background-color: rgb(234, 238, 238);
+    /* display: grid; */
+    /* height: 200px; */
+    /* width: 200px; */
+  
+  }
+  ul{
+    list-style-type: none;
+  }
