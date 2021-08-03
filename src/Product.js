@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 const Product = () => {
-    const [adata, setAdata] = useState([]);
+    const [dataof, setDataof] = useState([]);
     const [added, setadded] = useState([]);
 
 
@@ -11,7 +11,7 @@ const Product = () => {
             const url = 'https://gist.githubusercontent.com/sandeepdillerao/edb372a95d6cf1a2a49b79577d023281/raw/75bf5e59e47748fad0d01ca63c81dd3791c2615c/product.json'
             const response = await fetch(url);
             const res = await response.json();
-            setAdata(res);
+            setDataof(res);
 
             console.log(res);
 
@@ -24,9 +24,9 @@ const Product = () => {
     const addtocart = (pro) => {
         console.log(pro);
         setadded([...added, pro]);
-     
+
     }
-  
+    
     const remaining =(data1)=>{
         setadded(
             added.filter((dataa)=> dataa !==data1)
@@ -39,7 +39,7 @@ const Product = () => {
             <h3>brands</h3>
             <ul>
 
-                {adata.map((brands,ind) => {
+                {dataof.map((brands,ind) => {
                     return (<li key={ind}>{brands.brand}</li>)
 
                 }
@@ -49,7 +49,7 @@ const Product = () => {
 
         <div className="cards">
        
-            {adata.map((a, id) => {
+            {dataof.map((a, id) => {
 
 
                 return (
@@ -90,6 +90,18 @@ const Product = () => {
                 })
             }
         </ul>
+        </div>
+        <div className="details">
+            <h6>Total No. of Items: {added.length}</h6>
+            <h6>Grand Total  {added.map((ab)=>{
+                let aa=0;
+                aa+=ab.price;
+                return aa;
+            })}</h6>
+            <button>Checkout </button>
+            <input type="text" placeholder="Enter Your Name"/>
+            <input type="email" placeholder="Enter Your Email"/>
+            <input type="number" placeholder="Enter Your Phone"/>
         </div>
     </div>
     )
